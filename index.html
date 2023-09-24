@@ -1,0 +1,270 @@
+<html>
+  <head>
+    <title>Battle Tetris</title>
+    <meta name="google" content="notranslate">
+
+    <style>
+      body {
+        background-image: url('fundos/neon.gif');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        color: #fff;
+        font-family: sans-serif;
+        font-size: 2em;
+        text-align:center;
+        zoom: 100%;
+        overflow: hidden;
+      }
+
+       img{
+        margin: 0 auto;
+      }
+
+      canvas.p1 {
+        border: 4px solid #e91515;
+        margin-top: 50px;
+        margin-bottom: 13px;
+        margin-left: 25px;
+        margin-right: 25px;
+        
+      }
+      
+      canvas.p2{
+        border: 4px solid #0d1cf3;
+        margin-top: 50px;
+        margin-bottom: 13px;
+        margin-left: 25px;
+        margin-right: 25px;
+        
+      }
+      #player1_section {
+          float: left;
+      }
+      @font-face{
+        font-family: comicsans;
+        src: url(ComicSansMS3.ttf);
+      }
+      .btnIniciar{
+        display: flex;
+        margin: 0 auto;
+        color: #000000;
+        background-color: #72eb10;
+        margin-top: 2%;
+        padding-left: 35px;
+        padding-right: 35px;
+        padding-top: 5px;
+        padding-bottom: 15px;
+        font-size: 50px; 
+        border-radius: 15px;
+        font-family: comicsans;
+        box-shadow: #000000 -4px 4px 2px;
+        text-shadow: #fff 0px 0px 10px;
+        transition: transform 0.3s; 
+        
+      }
+      .btnIniciar:hover{
+        background-color: #0d5300;
+        color: #fff;
+        transform: scale(1.1);
+      }
+      .titulo{
+        padding-top: 10px;
+        font-size: 100px;
+        font-family: comicsans;
+      }
+
+      .all{
+        display: flex  ;
+        justify-content: center;
+      }
+      span{
+      text-shadow: #000000 -3px 3px 3px ;
+      }
+      aside img{
+       position: absolute;
+       top: 19%;
+       left: 90;
+       width: 350px;
+       opacity: 80%;
+       background-color: #fff;
+       border-radius: 10px;
+      }
+      .canvas-block {
+    border: 2px solid #fff; /* Espessura e cor da borda */
+}
+  #score_p1{
+background-color: #e91515;
+margin-left: 24px;
+margin-right: 24px;
+border-radius: 5px;
+font-family: comicsans;
+text-shadow: #000000 -4px 2px 4px;
+box-shadow: #000000 -1px 1px 4px;
+}
+#score_p2{
+background-color: #0d1cf3;
+margin-left: 24px;
+margin-right: 24px;
+border-radius: 5px;
+font-family: comicsans;
+text-shadow: #000000 -4px 2px 4px;
+box-shadow: #000000 -1px 1px 4px;
+
+}
+
+.mudarfundo{
+  position: absolute;
+    top: 32%;
+    right: 90;
+    width: 350px; 
+    font-family: comicsans;
+    font-size: 35px;
+    background-color: #fff;
+    border-radius: 10px;
+    opacity: 80%;
+    color: #000000;
+    
+    }
+    #background-selector{
+   background-color: #000000;
+      font-family: comicsans;
+      color: #fff;
+      font-size: 30px;
+      border-radius: 10px;
+    }
+    #buttonfundo{
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 1%;
+      margin-top: 3%;
+      margin-bottom: 13;
+      font-size: 25px;
+      font-family: comicsans;
+      border: 3px solid#000000;
+      transition: transform 0.2s; 
+
+    }
+    #buttonfundo:hover{
+      transform: scale(1.1);
+      background-color: #e0e0e0;
+    }
+    #music-selector{
+      background-color: #000000;
+      font-family: comicsans;
+      color: #fff;
+      font-size: 30px;
+      border-radius: 10px;
+    }
+
+    #buttonmusica{
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 1%;
+      margin-top: 3%;
+      margin-bottom: 13;
+      font-size: 25px;
+      font-family: comicsans;
+      border: 3px solid#000000;
+      transition: transform 0.2s; 
+
+    }
+
+    #buttonmusica:hover{
+      transform: scale(1.1);
+      background-color: #e0e0e0;
+    }
+    .som {
+    animation: fadeInOut 2s ease-in-out 1s forwards;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.som:hover {
+    opacity: 1;
+}
+
+
+
+  </style>
+
+  </head>
+  <body>
+    <div class="titulo">
+      <span style="color: #FE4868; ">Ba</span>
+      <span style="color: #FD9815; margin-left: -35;">tt</span>
+      <span style="color: #4FCA39; margin-left: -38">le</span>
+      <span style="color: #00E4F6;">     Tet</span>
+      <span style="color: #D128CD; margin-left: -36;">ris</span>
+      
+       
+    </div>
+
+    <div class="all">
+
+
+        <div>
+
+            <canvas id="tetris_p2" class="p2" width="200" height="400"></canvas>
+            <div id="score_p2">0</div>
+            </div>
+
+        <div id="player1_section">
+        
+        <canvas id="tetris_p1" class="p1" width="200" height="400"></canvas>
+        <div id="score_p1">0</div>
+        </div>
+
+
+        
+    </div>
+ <aside id="controles">
+  <img src="controles.png" alt="">
+</aside>
+<aside class="mudarfundo" id="trocarfundo">
+   Fundo <br>
+  <select id="background-selector">
+
+    <option value="fundos/neon.gif">Neon</option>
+    <option value="fundos/horadeaventura.gif">Hora de Aventura</option>
+    <option value="fundos/ceu.gif">Céu</option>
+    <option value="fundos/montanhas.gif">Montanhas</option>
+    <option value="fundos/gato.gif">Gato</option>
+    <option value="fundos/hollowknight.gif">hollow knight</option>
+    <option value="fundos/minecraft.gif">Minecraft</option>
+
+  </select><br >
+<button id="buttonfundo" onclick="changeBackground()">Aplicar</button>
+<br> Música<br>
+<select id="music-selector">
+  <option value="musicas/theme.mp3">Tetris Padrão</option>
+  <option value="musicas/loop.mp3">Loop Hero</option>
+  <option value="musicas/melhor.mp3">A Melhor</option>
+  <option value="musicas/otherside.mp3">Mine Otherside</option>
+  <option value="musicas/megalovania.mp3">Megalovania</option>
+
+
+</select>
+<br>
+<button id="buttonmusica" onclick="changeMusic()">Aplicar</button>
+
+
+</aside>
+    <audio src="./theme.mp3" hidden loop ></audio>
+<button class="btnIniciar"  >Começar!</button>
+<br>
+<div><img class="som" src="com_som.png" alt="" width="75px"></div>
+
+  </body>
+  <script src="script.js"></script>
+</html>

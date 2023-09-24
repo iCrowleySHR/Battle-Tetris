@@ -61,6 +61,7 @@
         box-shadow: #000000 -4px 4px 2px;
         text-shadow: #fff 0px 0px 10px;
         transition: transform 0.3s; 
+        border: none;
         
       }
       .btnIniciar:hover{
@@ -126,6 +127,20 @@ box-shadow: #000000 -1px 1px 4px;
     color: #000000;
     
     }
+
+    .baixoAside{
+      display: none;
+      position: absolute;
+      top: 68%;
+      right: 90;
+      font-family: comicsans;
+      font-size: 30px;
+      color: #ffffff;
+      margin-right: 22px;
+      
+    }
+
+
     #background-selector{
    background-color: #000000;
       font-family: comicsans;
@@ -222,26 +237,32 @@ box-shadow: #000000 -1px 1px 4px;
     <option value="fundos/ceu.gif">Céu</option>
     <option value="fundos/montanhas.gif">Montanhas</option>
     <option value="fundos/gato.gif">Gato</option>
-    <option value="fundos/hollowknight.gif">hollow knight</option>
+    <option value="fundos/hollowknight.gif">Hollow Knight</option>
     <option value="fundos/minecraft.gif">Minecraft</option>
 
-  </select><br >
+  </select><br>
 <button id="buttonfundo" onclick="changeBackground()">Aplicar</button>
 <br> Música<br>
 <select id="music-selector">
   <option value="musicas/theme.mp3">Tetris Padrão</option>
+  <option value="musicas/estrada.mp3">Estrada da vida</option>
   <option value="musicas/loop.mp3">Loop Hero</option>
   <option value="musicas/melhor.mp3">A Melhor</option>
   <option value="musicas/otherside.mp3">Mine Otherside</option>
   <option value="musicas/megalovania.mp3">Megalovania</option>
+  
 
 
 </select>
 <br>
 <button id="buttonmusica" onclick="changeMusic()">Aplicar</button>
-
+<br>
 
 </aside>
+  <div class="baixoAside">
+    Aplicado com sucesso!
+  </div>
+
     <audio src="./theme.mp3" hidden loop ></audio>
 <button class="btnIniciar"  >Começar!</button>
 <br>

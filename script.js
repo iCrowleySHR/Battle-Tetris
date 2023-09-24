@@ -7,8 +7,11 @@
     let downKeyPressed2 = false; // Para o segundo jogador
     let controles = document.getElementById('controles');
     let trcarfundo = document.getElementById('trocarfundo');
+    let txtAplicar = document.querySelector('.baixoAside')
+    let intervalID;
 
  img.style.display = 'none';
+
 
 
     const backgrounds = [
@@ -25,6 +28,9 @@
     ];
 
     function changeBackground() {
+
+        
+
         // Selecione o elemento de seleção
         const selector = document.getElementById("background-selector");
     
@@ -39,6 +45,19 @@
     
         // Salve a escolha do fundo no localStorage
         localStorage.setItem("selectedBackground", selectedBackground);
+
+        txtAplicar.style.display='block'
+       // para a mensagem nao ficar sumindo sem respeitar o tempo, voce precisa limpar a variavel!
+        if (intervalID) {
+            clearInterval(intervalID);
+        }
+    
+        intervalID = setInterval(function(){
+            txtAplicar.style.display = 'none';
+        }, 2045);
+
+     
+        
     }
     document.addEventListener("DOMContentLoaded", function () {
         // Verifique se há uma escolha de fundo anteriormente salva
@@ -56,6 +75,9 @@
     });
         
     function changeMusic() {
+
+       
+
         // Selecione o elemento de seleção
         const musicSelector = document.getElementById("music-selector");
     
@@ -70,6 +92,19 @@
     
         // Salve a escolha da música no localStorage
         localStorage.setItem("selectedMusic", selectedMusic);
+
+        txtAplicar.style.display='block'
+       
+
+        if (intervalID) {
+            clearInterval(intervalID);
+        }
+    
+        intervalID = setInterval(function(){
+            txtAplicar.style.display = 'none';
+        }, 2045);
+        
+        
     }
     
     document.addEventListener("DOMContentLoaded", function () {

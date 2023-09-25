@@ -27,38 +27,6 @@ const backgrounds = [
 
 ];
 
-function changeBackground() {
-
-
-
-    // Selecione o elemento de seleção
-    const selector = document.getElementById("background-selector");
-
-    // Selecione um elemento que representa o corpo da página
-    const body = document.body;
-
-    // Obtenha o valor selecionado no elemento de seleção
-    const selectedBackground = selector.value;
-
-    // Aplique o fundo selecionado ao elemento de corpo
-    body.style.backgroundImage = `url('${selectedBackground}')`;
-
-    // Salve a escolha do fundo no localStorage
-    localStorage.setItem("selectedBackground", selectedBackground);
-
-    txtAplicar.style.display = 'block'
-    // para a mensagem nao ficar sumindo sem respeitar o tempo, voce precisa limpar a variavel!
-    if (intervalID) {
-        clearInterval(intervalID);
-    }
-
-    intervalID = setInterval(function () {
-        txtAplicar.style.display = 'none';
-    }, 2045);
-
-
-
-}
 document.addEventListener("DOMContentLoaded", function () {
     // Verifique se há uma escolha de fundo anteriormente salva
     const selectedBackground = localStorage.getItem("selectedBackground");
@@ -74,9 +42,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-function changeMusic() {
+function changeAll() {
 
-
+// MUSICA 
 
     // Selecione o elemento de seleção
     const musicSelector = document.getElementById("music-selector");
@@ -92,6 +60,35 @@ function changeMusic() {
 
     // Salve a escolha da música no localStorage
     localStorage.setItem("selectedMusic", selectedMusic);
+
+// BACK GROUND
+    
+    // Selecione o elemento de seleção
+    const selector = document.getElementById("background-selector");
+
+    // Selecione um elemento que representa o corpo da página
+    const body = document.body;
+
+    // Obtenha o valor selecionado no elemento de seleção
+    const selectedBackground = selector.value;
+
+    // Aplique o fundo selecionado ao elemento de corpo
+    body.style.backgroundImage = `url('${selectedBackground}')`;
+
+    // Salve a escolha do fundo no localStorage
+    localStorage.setItem("selectedBackground", selectedBackground);
+
+// MENSAGEM APLICADO COM SUCESSO
+
+    txtAplicar.style.display = 'block'
+    // para a mensagem nao ficar sumindo sem respeitar o tempo, voce precisa limpar a variavel!
+    if (intervalID) {
+        clearInterval(intervalID);
+    }
+
+    intervalID = setInterval(function () {
+        txtAplicar.style.display = 'none';
+    }, 2045);
 
     txtAplicar.style.display = 'block'
 

@@ -17,6 +17,7 @@ R: Reiniciar - Se quiser começar uma nova partida, basta pressionar "R" para re
 SCAPE: Pausa técnica - Se precisar fazer uma pausa rápida, pressione "P" para pausar o jogo temporariamente.
 
 Como Jogar
+
 Acesse a URL: https://icrowleyshr.github.io/battle-tetris/
 
 Divirta-se jogando o Battle Tetris Offline!

@@ -150,6 +150,10 @@ body {
 
   }
 
+  .player2{
+    display: block;
+  }
+
 
   #background-selector {
     background-color: #000000;
@@ -180,7 +184,7 @@ body {
   }
 
 
-  #music-selector {
+  #music-selector, #playerSelecionado {
     background-color: #000000;
     font-family: comicsans;
     color: #fff;

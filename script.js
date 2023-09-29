@@ -10,6 +10,7 @@ let trcarfundo = document.getElementById('trocarfundo');
 let txtAplicar = document.querySelector('.baixoAside')
 let intervalID;
 
+
 img.style.display = 'none';
 
 
@@ -27,6 +28,7 @@ const backgrounds = [
 
 ];
 
+// Se tiver alguma opção selecionada no background
 document.addEventListener("DOMContentLoaded", function () {
     // Verifique se há uma escolha de fundo anteriormente salva
     const selectedBackground = localStorage.getItem("selectedBackground");
@@ -42,7 +44,27 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-function changeAll() {
+// Se tiver alguma opção selecionada na musica
+document.addEventListener("DOMContentLoaded", function () {
+    // Verifique se há uma escolha de música anteriormente salva
+    const selectedMusic = localStorage.getItem("selectedMusic");
+
+    // Se uma escolha de música estiver salva, aplique-a
+    if (selectedMusic) {
+        const audio = document.querySelector('audio');
+        audio.src = selectedMusic;
+
+        // Atualize a seleção no elemento de seleção
+        const musicSelector = document.getElementById("music-selector");
+        musicSelector.value = selectedMusic;
+    }
+});
+
+
+
+
+
+function changeAll(){
 
 // MUSICA 
 
@@ -78,6 +100,27 @@ function changeAll() {
     // Salve a escolha do fundo no localStorage
     localStorage.setItem("selectedBackground", selectedBackground);
 
+    //Jogadores
+/*
+    const playerSelect = document.querySelector('#playerSelecionado')
+    const playerSelecionado = playerSelect.value
+    const player2 = document.querySelector('.player2')
+
+  
+
+    if(playerSelecionado == 1){
+        player2.style.display='none'
+        let msg = "Que pena! Você perdeu :("
+
+    }if(playerSelecionado == 2){
+        player2.style.display='block'
+        let msg = "Parabéns!! Você ganhou!!!"
+        
+
+
+    }*/
+
+
 // MENSAGEM APLICADO COM SUCESSO
 
     txtAplicar.style.display = 'block'
@@ -104,23 +147,12 @@ function changeAll() {
 
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-    // Verifique se há uma escolha de música anteriormente salva
-    const selectedMusic = localStorage.getItem("selectedMusic");
 
-    // Se uma escolha de música estiver salva, aplique-a
-    if (selectedMusic) {
-        const audio = document.querySelector('audio');
-        audio.src = selectedMusic;
-
-        // Atualize a seleção no elemento de seleção
-        const musicSelector = document.getElementById("music-selector");
-        musicSelector.value = selectedMusic;
-    }
-});
 
 
 function iniciarJogo() {
+
+  
     const musicSelector = document.getElementById("music-selector");
 
     // Obtenha o valor selecionado no elemento de seleção de música
@@ -135,6 +167,9 @@ function iniciarJogo() {
     audio.play();
 
     img.style.display = "block";
+    if(selectedMusic == "nenhuma"){
+        img.style.display='none'
+    }
 
 
     img.addEventListener('click', function () {
@@ -147,6 +182,7 @@ function iniciarJogo() {
     });
 
     function toggleSound() {
+        
         if (on_off === 1) {
             img.setAttribute('src', 'sem_som.png');
             on_off = 0;
@@ -156,6 +192,8 @@ function iniciarJogo() {
             on_off = 1;
             audio.play();
         }
+
+        
     }
     document.addEventListener('keydown', event => {
         if (event.keyCode === 82) {
@@ -246,10 +284,14 @@ function iniciarJogo() {
             player.arena.forEach(row => row.fill(0));
             player.score = 0;
             updateScore();
-            alert("Parabéns!!! Você ganhou!!!")
+
+            alert("Parabéns!! Você ganhou!!");
             window.location.reload();
+                  
         }
+        
     }
+        
 
 
     /**
@@ -626,6 +668,8 @@ document.addEventListener('keydown', event => {
         iniciarJogo();
         libera = true;
     }
+
+   
 });
 
 

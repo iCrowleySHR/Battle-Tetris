@@ -135,6 +135,10 @@ function iniciarJogo() {
     audio.play();
 
     img.style.display = "block";
+    if(selectedMusic == "nenhuma"){
+        img.style.display='none'
+    }
+
 
 
     img.addEventListener('click', function () {

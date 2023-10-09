@@ -13,6 +13,10 @@ body {
     padding: 0;
   }
 
+  #msgPc{
+    display: none;
+  }
+
   img {
     margin: 0 auto;
   }
@@ -74,6 +78,7 @@ body {
     padding-top: 10px;
     font-size: 100px;
     font-family: comicsans;
+    transition: 300ms;
   }
 
   .all {
@@ -93,6 +98,7 @@ body {
     opacity: 80%;
     background-color: #fff;
     border-radius: 10px;
+    transition: 300ms;
   }
 
   .canvas-block {
@@ -132,6 +138,7 @@ body {
     border-radius: 10px;
     opacity: 80%;
     color: #000000;
+    transition: 300ms;
 
   }
 
@@ -144,10 +151,6 @@ body {
     font-family: comicsans;
     font-size: 30px;
     color: #ffffff;
-  
-    
- 
-
   }
 
 
@@ -157,10 +160,13 @@ body {
     color: #fff;
     font-size: 30px;
     border-radius: 10px;
-    width: 300px;
+    max-width: 100%;
+    width: 85%;
+    
   }
 
   select{
+    width: auto;
     cursor: pointer;
   }
 
@@ -176,7 +182,9 @@ body {
     font-family: comicsans;
     border: 3px solid#000000;
     transition: transform 0.2s;
-    width: 240px;
+    max-width: 100%;
+    width: 85%;
+    transition: 300ms;
   }
 
 
@@ -186,7 +194,8 @@ body {
     color: #fff;
     font-size: 30px;
     border-radius: 10px;
-    width: 300px;
+    max-width: 100%;
+    width: 85%;
   }
 
 
@@ -200,6 +209,9 @@ body {
     color: white;
 
   }
+  option{
+    width: auto;
+  }
 
   footer {
     position: absolute;
@@ -210,4 +222,95 @@ body {
     font-size: 23px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
+  }
+
+  @media screen and (max-width:1373px) {
+    aside img {
+      position: absolute;
+      left: 70;
+      top: 19%;
+      width: 250px;
+      opacity: 80%;
+      background-color: #fff;
+      border-radius: 10px;
+    }
+    
+    .mudarfundo {
+      position: absolute;
+      top: 20%;
+      right: 70;
+      width: 250px;
+      font-family: comicsans;
+      font-size: 35px;
+      background-color: #fff;
+      border-radius: 10px;
+      opacity: 80%;
+      color: #000000;
+    }  
+
+    .btnIniciar {
+      padding-left: 30px;
+      padding-right: 30px;
+      padding-top: 3px;
+      padding-bottom: 10px;
+      font-size: 40px;
+    }
+    .titulo {
+      margin: 5px;
+      padding-top: 10px;
+      font-size: 75px;
+      font-family: comicsans;
+      margin-bottom: -50px;
+      margin-top: -21px;
+    }
+
+    .baixoAside {
+      display: none;
+      position: absolute;
+      top: 100%;
+      text-align: center;
+      left: -18%;
+      font-family: comicsans;
+      font-size: 25px;
+      color: #ffffff;
+      
+    }
+  
+  }
+
+  @media screen and (max-width:1106px) {
+    aside img {
+      display: none;
+    }
+    
+    .mudarfundo {
+      display: none;
+    }  
+
+    .btnIniciar {
+      display: none;
+    }
+    .titulo {
+      display: none;
+    }
+
+    .baixoAside {
+      display: none;
+    }
+    canvas{
+      display: none;
+    }
+    #score_p1, #score_p2{
+      display: none;
+    }
+
+    #msgPc{
+      display: flex;
+      justify-content: center;
+      color: black;
+      font-family: comicsans;
+      margin-top: 25%;
+      font-size: 45px;
+    }
+  
   }

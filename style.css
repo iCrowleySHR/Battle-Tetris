@@ -333,7 +333,7 @@ body {
 
   /*Mensagem para celular*/
 
-  @media screen and (max-height:1080px) and (max-width:795px) {
+  @media screen and (max-height:1081px) and (max-width:795px) {
 
     aside img {
       display: none;

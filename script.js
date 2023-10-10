@@ -152,11 +152,11 @@ function iniciarJogo() {
 
     function toggleSound() {
         if (on_off === 1) {
-            img.setAttribute('src', 'sem_som.png');
+            img.setAttribute('src', './img/sem_som.png');
             on_off = 0;
             audio.pause();
         } else {
-            img.setAttribute('src', 'com_som.png');
+            img.setAttribute('src', './img/com_som.png');
             on_off = 1;
             audio.play();
         }

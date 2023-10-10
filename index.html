@@ -6,10 +6,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <link rel="shortcut icon" href="icon.png" type="image/x-icon">
-  <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+  <link rel="shortcut icon" href="./img/icon.png" type="image/x-icon">
 </head>
-<body>
+<h3>
   <div class="titulo">
     <span style="color: #FE4868; ">Ba</span>
     <span style="color: #FD9815; margin-left: -35;">tt</span>
@@ -28,20 +27,18 @@
     </div>
   </div>
   <aside id="controles">
-    <img src="controles.png" alt="">
+    <img src="./img/controles.png" alt="Imagem com os controles usado no jogo">
   </aside>
   <aside class="mudarfundo" id="trocarfundo">
     Fundo<br>
     <select id="background-selector">
-
+      <option value="fundos/ceu.gif">Céu</option>
       <option value="fundos/neon.gif">Neon</option>
       <option value="fundos/horadeaventura.gif">Hora de Aventura</option>
-      <option value="fundos/ceu.gif">Céu</option>
       <option value="fundos/montanhas.gif">Montanhas</option>
       <option value="fundos/gato.gif">Gato</option>
       <option value="fundos/hollowknight.gif">Hollow Knight</option>
       <option value="fundos/minecraft.gif">Minecraft</option>
-
     </select><br>
 
     Música<br>
@@ -53,24 +50,20 @@
       <option value="musicas/otherside.mp3">Mine Otherside</option>
       <option value="musicas/megalovania.mp3">Megalovania</option>
       <option value="nenhuma">Nenhuma</option>
-
-
-
     </select>
-    <br>
+<br>
     <button id="buttonOp" onclick="changeAll()">Aplicar</button>
-    <br>
+<br>
     <aside class="baixoAside">
       Aplicado com sucesso!
     </aside>
   </aside>
-
-  <h1 id="msgPc">O jogo só é compativel para computadores 😶</h1>
+    <h1 id="msgPc">O jogo só é compatível para computadores!! </h1>
 
   <audio src="./theme.mp3" hidden loop></audio>
   <button class="btnIniciar">Começar!</button>
-  <br>
-  <div><img class="som" src="com_som.png" alt="" width="75px"></div>
+<br>
+  <div><img class="som" src="./img/com_som.png" alt="" width="75px"></div>
 
   <footer>Desenvolvido por <strong>
       <a href="https://www.instagram.com/gustavogualda10/" target="_blank">

@@ -45,7 +45,7 @@ body {
 
   @font-face {
     font-family: comicsans;
-    src: url(ComicSansMS3.ttf);
+    src: url(./font/ComicSansMS3.ttf);
   }
 
   .btnIniciar {
@@ -79,6 +79,7 @@ body {
     font-size: 100px;
     font-family: comicsans;
     transition: 300ms;
+    margin-bottom: -25px;
   }
 
   .all {
@@ -151,6 +152,7 @@ body {
     font-family: comicsans;
     font-size: 30px;
     color: #ffffff;
+    
   }
 
 
@@ -213,6 +215,16 @@ body {
     width: auto;
   }
 
+  #msgPc{
+    display: none;
+    justify-content: center;
+    color: white;
+    font-family: comicsans;
+    margin-top: 25%;
+    font-size: 45px;
+    -webkit-text-stroke: black 1px;
+  }
+
   footer {
     position: absolute;
     bottom: 0;
@@ -224,7 +236,11 @@ body {
 
   }
 
-  @media screen and (max-width:1373px) {
+  @media screen and (max-width:1373px){
+    body{
+      zoom: 0.85;
+    }
+
     aside img {
       position: absolute;
       left: 70;
@@ -278,7 +294,47 @@ body {
   
   }
 
-  @media screen and (max-width:1106px) {
+  @media screen and (max-width:1600px) {
+    body{
+      zoom: 0.90;
+    }
+  
+  }
+
+  @media screen and (max-width:1037px){
+    body{
+      zoom: 0.57;
+    }
+  }
+
+  @media screen and (max-height:818px) {
+    body{
+      zoom: 0.90;
+    }
+  }
+
+  @media screen and (max-height:746px) {
+    body{
+      zoom: 0.80;
+    }
+  }
+
+  @media screen and (max-height:668px) {
+    body{
+      zoom: 0.70;
+    }
+  }
+
+  @media screen and (max-height:600px) {
+    body{
+      zoom: 0.60;
+    }
+  }
+
+  /*Mensagem para celular*/
+
+  @media screen and (max-height:550px) and (max-width:666px) {
+
     aside img {
       display: none;
     }
@@ -307,10 +363,13 @@ body {
     #msgPc{
       display: flex;
       justify-content: center;
-      color: black;
+      color: white;
       font-family: comicsans;
       margin-top: 25%;
       font-size: 45px;
+      -webkit-text-stroke: black 1px;
     }
-  
   }
+
+
+

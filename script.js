@@ -9,6 +9,7 @@ let controles = document.getElementById('controles');
 let trcarfundo = document.getElementById('trocarfundo');
 let txtAplicar = document.querySelector('.baixoAside')
 let intervalID;
+let libera = false;
 
 img.style.display = 'none';
 
@@ -121,6 +122,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 function iniciarJogo() {
+     libera = true;
     const musicSelector = document.getElementById("music-selector");
 
     // Obtenha o valor selecionado no elemento de seleção de música
@@ -623,7 +625,7 @@ function iniciarJogo() {
 }
 
 
-let libera = false;
+
 
 document.addEventListener('keydown', event => {
     if (event.keyCode === 13 && !libera) {

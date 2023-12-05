@@ -548,26 +548,30 @@ function iniciarJogo() {
             keys[event.keyCode] = true;
 
             // Verifique as teclas pressionadas e execute as ações correspondentes
-            if (keys[37]) {
+            if (keys[74]) {
                 // Tecla esquerda pressionada
+                // J
                 playerMove(-1, player1);
 
             }
-            if (keys[39]) {
+            if (keys[76]) {
                 // Tecla direita pressionada
+                // L
                 playerMove(1, player1);
 
             }
-            if (keys[40]) {
+            if (keys[75]) {
                 // Tecla para baixo pressionada
+                // K
                 downKeyPressed1 = true;
                 playerDrop(player1);
 
             }
-            if (keys[38]) {
+            if (keys[73]) {
                 // Tecla para cima pressionada
+                // I
                 playerRotate(1, player1);
-                delete keys[38];
+                delete keys[73];
             }
             if (keys[65]) {
                 // Tecla 'A' pressionada
@@ -602,7 +606,7 @@ function iniciarJogo() {
 
     document.addEventListener('keyup', event => {
         // Remova a tecla do objeto quando ela for liberada
-        if (event.keyCode === 40) {
+        if (event.keyCode === 75) {
             downKeyPressed1 = false;
 
         }
